@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              blue: "hsl(246, 80%, 60%)",
+              orange: "hsl(15, 100%, 70%)",
+              softBlue: "hsl(195, 74%, 62%)",
+              lightRed: "hsl(348, 100%, 68%)",
+              limegreen: "hsl(145, 58%, 55%)",
+              violet: "hsl(264, 64%, 52%)",
+              softOrange: "hsl(43, 84%, 65%)",
+              veryDarkBlue: "hsl(226, 43%, 10%)",
+              darkBlue: "hsl(235, 46%, 20%)",
+              hoverDarkBlue: "hsl(235, 46%, 35%)",
+              desaturatedBlue: "hsl(235, 45%, 61%)",
+              paleBlue: "hsl(236, 100%, 87%)",
+            },
+            fontSize: {
+              title: "18px",
+            },
+            fontFamily: {
+              rubik: ["Rubik", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <script src="script.js" defer></script>
+  </head>
+  <body class="font-rubik bg-veryDarkBlue flex justify-center">
+    <main
+      class="container grid grid-cols-1 content-center items-start md:grid-cols-4 gap-4 max-w-sm md:max-w-5xl min-w-[375px] min-h-screen m-8"
+    >
+      <div class="bg-darkBlue row-span-2 self-stretch w-full rounded-2xl">
+        <div class="bg-blue rounded-2xl">
+          <div
+            class="flex md:flex-col md:items-start md:p-4 md:pb-16 gap-8 items-center px-8 py-10"
+          >
+            <div class="bg-white rounded-full w-20 h-20 p-1">
+              <img
+                src="./images//image-jeremy.png"
+                class="min-w-full min-h-full object-cover"
+                alt=""
+              />
+            </div>
+            <div>
+              <h1 class="text-paleBlue text-title">Report for</h1>
+              <h1 class="text-white text-2xl">Jeremy Robson</h1>
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex md:flex-col md:items-start md:gap-4 justify-between items-center p-8"
+        >
+          <button
+            id="daily-btn"
+            class="hover:text-white text-paleBlue text-title"
+          >
+            Daily
+          </button>
+          <button
+            id="weekly-btn"
+            class="hover:text-white text-paleBlue text-title text-white"
+          >
+            Weekly
+          </button>
+          <button
+            id="monthly-btn"
+            class="hover:text-white text-paleBlue text-title"
+          >
+            Monthly
+          </button>
+        </div>
+      </div>
+      <div class="bg-orange rounded-2xl max-h-fit">
+        <div
+          class="pt-10 mr-4 bg-no-repeat bg-right"
+          style="background-image: url('./images/icon-work.svg')"
+        ></div>
+        <div
+          class="bg-darkBlue hover:bg-hoverDarkBlue hover:cursor-pointer rounded-2xl p-8"
+        >
+          <div class="flex justify-between items-center">
+            <h1 class="text-title text-white">Work</h1>
+            <img src="./images/icon-ellipsis.svg" />
+          </div>
+          <div
+            id="work"
+            class="flex md:flex-col md:items-start md:gap-4 justify-between items-center"
+          >
+            <h1 class="text-2xl md:text-4xl text-white mt-4">32hrs</h1>
+            <p class="text-paleBlue">Last Week - 36hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-softBlue rounded-2xl max-h-fit">
+        <div
+          class="pt-10 mr-4 bg-no-repeat bg-right"
+          style="background-image: url('./images/icon-play.svg')"
+        ></div>
+        <div
+          class="bg-darkBlue rounded-2xl p-8 hover:bg-hoverDarkBlue hover:cursor-pointer"
+        >
+          <div class="flex justify-between items-center">
+            <h1 class="text-title text-white">Play</h1>
+            <img src="./images/icon-ellipsis.svg" />
+          </div>
+          <div
+            id="play"
+            class="flex md:flex-col md:items-start md:gap-4 justify-between items-center"
+          >
+            <h1 class="text-2xl text-white md:text-4xl mt-4">10hrs</h1>
+            <p class="text-paleBlue">Last Week - 8hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-lightRed rounded-2xl max-h-fit">
+        <div
+          class="pt-10 mr-4 bg-no-repeat bg-right"
+          style="background-image: url('./images/icon-study.svg')"
+        ></div>
+        <div
+          class="bg-darkBlue rounded-2xl p-8 hover:bg-hoverDarkBlue hover:cursor-pointer"
+        >
+          <div class="flex justify-between items-center">
+            <h1 class="text-title text-white">Study</h1>
+            <img src="./images/icon-ellipsis.svg" />
+          </div>
+          <div
+            id="study"
+            class="flex md:flex-col md:items-start md:gap-4 justify-between items-center"
+          >
+            <h1 class="text-2xl text-white md:text-4xl mt-4">4hrs</h1>
+            <p class="text-paleBlue">Last Week - 7hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-limegreen rounded-2xl max-h-fit">
+        <div
+          class="pt-10 mr-4 bg-no-repeat bg-right"
+          style="background-image: url('./images/icon-exercise.svg')"
+        ></div>
+        <div
+          class="bg-darkBlue rounded-2xl p-8 hover:bg-hoverDarkBlue hover:cursor-pointer"
+        >
+          <div class="flex justify-between items-center">
+            <h1 class="text-title text-white">Exercise</h1>
+            <img src="./images/icon-ellipsis.svg" />
+          </div>
+          <div
+            id="exercise"
+            class="flex md:flex-col md:items-start md:gap-4 justify-between items-center"
+          >
+            <h1 class="text-2xl text-white md:text-4xl mt-4">4hrs</h1>
+            <p class="text-paleBlue">Last Week - 5hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-violet rounded-2xl max-h-fit">
+        <div
+          class="pt-10 mr-4 bg-no-repeat bg-right"
+          style="background-image: url('./images/icon-social.svg')"
+        ></div>
+        <div
+          class="bg-darkBlue rounded-2xl p-8 hover:bg-hoverDarkBlue hover:cursor-pointer"
+        >
+          <div class="flex justify-between items-center">
+            <h1 class="text-title text-white">Social</h1>
+            <img src="./images/icon-ellipsis.svg" />
+          </div>
+          <div
+            id="social"
+            class="flex md:flex-col md:items-start md:gap-4 justify-between items-center"
+          >
+            <h1 class="text-2xl text-white md:text-4xl mt-4">5hrs</h1>
+            <p class="text-paleBlue">Last Week - 10hrs</p>
+          </div>
+        </div>
+      </div>
+      <div class="bg-softOrange rounded-2xl max-h-fit">
+        <div
+          class="pt-10 mr-4 bg-no-repeat bg-right"
+          style="background-image: url('./images/icon-self-care.svg')"
+        ></div>
+        <div
+          class="bg-darkBlue rounded-2xl p-8 hover:bg-hoverDarkBlue hover:cursor-pointer"
+        >
+          <div class="flex justify-between items-center">
+            <h1 class="text-title text-white">Self Care</h1>
+            <img src="./images/icon-ellipsis.svg" />
+          </div>
+          <div
+            id="self-care"
+            class="flex md:flex-col md:items-start md:gap-4 justify-between items-center"
+          >
+            <h1 class="text-2xl text-white md:text-4xl mt-4">2hrs</h1>
+            <p class="text-paleBlue">Last Week - 2hrs</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+
+<!-- Report for Jeremy Robson Daily Weekly Monthly Work 5hrs
+
+Previous - 7hrs
+
+32hrs
+
+Previous - 36hrs
+
+103hrs
+
+Previous - 128hrs
+
+
+Play 1hr
+
+Previous - 2hrs
+
+10hrs
+
+Previous - 8hrs
+
+23hrs
+
+Previous - 29hrs
+
+
+Study 0hrs
+
+Previous - 1hr
+
+4hrs
+
+Previous - 7hrs
+
+13hrs
+
+Previous - 19hrs
+
+
+Exercise 1hr
+
+Previous - 1hr
+
+4hrs
+
+Previous - 5hrs
+
+11hrs
+
+Previous - 18hrs
+
+
+Social 1hr
+
+Previous - 3hrs
+
+5hrs
+
+Previous - 10hrs
+
+21hrs
+
+Previous - 23hrs
+
+
+Self Care 0hrs
+
+Previous - 1hr
+
+2hrs
+
+Previous - 2hrs
+
+7hrs
+
+Previous - 11hrs monthly -->
